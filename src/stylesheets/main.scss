@@ -1,0 +1,155 @@
+* {
+  // outline: 1px solid black;
+  font-family: "Roboto";
+}
+
+body {
+  padding-bottom: 25px;
+}
+
+p {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-family: "Roboto Black";
+}
+
+h4 {
+  font-family: "Roboto Bold";
+  font-weight: 500;
+}
+
+button {
+  background-color: unset;
+  border: unset;
+}
+
+img {
+  object-fit: contain;
+  object-position: center;
+  overflow: hidden;
+}
+
+.divider {
+  $height: 2px;
+  min-height: $height;
+  max-height: $height;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  background-color: $light-border;
+}
+
+.content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.dot {
+  $size: 2px;
+  $color: #3b3b3b;
+  align-self: center;
+  min-width: $size;
+  min-height: $size;
+  max-width: $size;
+  max-height: $size;
+  margin-left: 12px;
+  padding: unset;
+  border: 1px solid $color;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+.green {
+  background-color: $green;
+}
+
+.orange {
+  background-color: $orange;
+}
+
+.blue {
+  background-color: $blue;
+}
+
+.violet {
+  background-color: $violet;
+}
+
+.teal {
+  background-color: $teal;
+}
+
+.github-preview {
+  min-width: $preview-icon-size;
+  min-height: $preview-icon-size;
+  width: $preview-icon-size;
+  height: $preview-icon-size;
+  margin-top: auto;
+  background: no-repeat center/100% url("../assets/github.svg");
+}
+
+.links-container {
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 100%;
+  margin-left: 0;
+  padding-left: 1px;
+  overflow: hidden;
+
+  a {
+    text-transform: uppercase;
+    font-family: "Roboto Bold";
+    font-size: 12px;
+    font-weight: 600;
+    color: #36454f;
+  }
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal:not(.preview) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3000;
+
+  .overlay {
+    display: block;
+  }
+}
+
+.preview.modal {
+  position: relative;
+  z-index: 4;
+  display: block;
+  max-height: 75%;
+  width: auto;
+  height: fit-content;
+  border: 2px solid #000000;
+  border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+  .hide-l {
+    display: none;
+  }
+}

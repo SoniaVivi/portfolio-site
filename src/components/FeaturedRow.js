@@ -1,29 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
-import testImage from "../assets/testImage.jpg";
+import ArrowsFullscreen from "../assets/ArrowsFullscreen";
+import useModal from "../hooks/useModal";
 
 const FeaturedRow = (props) => {
+  const [modal, toggleModal] = useModal(props.previewImage);
+
   return (
     <div
       className={`featured row col-12 ${
         props.className ? props.className : ""
       }`}
     >
-      <img className="col-5 col-lg-4 featured preview" src={testImage}></img>
-      <div className="col-6 col-lg-6 featured description">
-        <h4>Lorem ipsum</h4>
-        <p>
-          Lorem ipsum dolor sit amet, dicat indoctum mediocrem ad sed. Vis ne
-          wisi congue possim. No purto ferri eos, pri in velit aperiam aliquam,
-          eu quo tantas aeterno consectetuer. Docendi omittam reprehendunt ius
-          an, munere tempor scriptorem ad per
-        </p>
-        <div className="row featured links-container">
-          <a className="github-preview"></a>
-          <div className="dot"></div>
-          <a>Live Preview</a>
+      <div className="col-5 col-lg-4 featured preview" onClick={toggleModal}>
+        <div className="featured wrapper">
+          <img src={props.previewImage} className="featured preview"></img>
+          <ArrowsFullscreen className="featured preview" />
+          <div className="overlay"></div>
         </div>
       </div>
+      <div className="col-6 col-lg-6 featured description">
+        <h4>{props.title}</h4>
+        <p>{props.description}</p>
+        <div className="row featured links-container">
+          <a className="github-preview" href={props.githubLink}></a>
+          {props.livePreviewLink ? (
+            <React.Fragment>
+              <div className="dot"></div>
+              <a href={props.livePreviewLink} className="live-preview">
+                Live Preview
+              </a>
+            </React.Fragment>
+          ) : null}
+        </div>
+      </div>
+      {modal}
     </div>
   );
 };
@@ -31,5 +42,10 @@ const FeaturedRow = (props) => {
 export default FeaturedRow;
 
 FeaturedRow.propTypes = {
+  previewImage: PropTypes.string.isRequired,
+  githubLink: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  livePreviewLink: PropTypes.string,
   className: PropTypes.string,
 };

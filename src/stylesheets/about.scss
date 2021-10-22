@@ -1,0 +1,16 @@
+$portrait-padding: 25px;
+
+.portrait {
+  padding-top: $portrait-padding;
+  padding-bottom: $portrait-padding;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.about.description {
+  padding-top: $portrait-padding;
+  padding-bottom: 25px;
+}

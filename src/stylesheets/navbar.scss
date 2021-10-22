@@ -1,0 +1,21 @@
+.navbar {
+  margin-bottom: 50px;
+  border-bottom: 1px solid $light-border;
+  background-color: rgba(255, 255, 255, 1);
+
+  .container-lg {
+    flex-direction: row-reverse;
+  }
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.nav-item {
+  margin-left: 8px;
+}
+
+.nav-link {
+  color: $text;
+}
