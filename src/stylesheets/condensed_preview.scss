@@ -113,6 +113,12 @@ li.project.condensed {
 
 @media (max-width: 576px) {
   li.project.condensed {
+    height: fit-content;
     padding-left: 0;
+
+    > * {
+      position: relative;
+      opacity: 1;
+    }
   }
 }
