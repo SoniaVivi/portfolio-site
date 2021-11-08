@@ -11,6 +11,7 @@ import mockTweeter from "./assets/images/mockTweeter.png";
 import tweetIguana from "./assets/images/tweetIguana.png";
 import snake from "./assets/images/snake.png";
 import battleship from "./assets/images/battleship.png";
+import skyFish from "./assets/images/skyFish.png";
 
 function App() {
   const portfolioRef = useRef(null);
@@ -68,21 +69,28 @@ function App() {
             color="green"
           />
           <CondensedProjectPreview
-            image={tweetIguana}
-            title="Tweet Iguana"
-            githubLink="https://github.com/SoniaVivi/tweet-iguana"
-            description="A Firefox browser extension that adds a download
-                         button to tweets."
-            color="blue"
+            image={skyFish}
+            title="Sky Fish"
+            githubLink="https://github.com/SoniaVivi/sky-fish"
+            description="A Firefox browser extension to retrieve manga data
+                         from their respective title on Reddit."
+            color="violet"
           />
           <CondensedProjectPreview
             image={battleship}
             title="Battleship"
             githubLink="https://github.com/SoniaVivi/battleship"
             description="A recreation of the classic game Battleship."
-            color="violet"
+            color="blue"
           />
-          <CondensedProjectPreview image={testImage} color="teal" />
+          <CondensedProjectPreview
+            image={tweetIguana}
+            title="Tweet Iguana"
+            githubLink="https://github.com/SoniaVivi/tweet-iguana"
+            description="A Firefox browser extension that adds a download
+                         button to tweets."
+            color="teal"
+          />
           <CondensedProjectPreview image={testImage} color="green" />
         </ul>
         <div className="w-100 divider" ref={aboutRef}></div>
