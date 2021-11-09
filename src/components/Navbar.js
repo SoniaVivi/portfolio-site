@@ -10,7 +10,7 @@ const Navbar = (props) => {
         <ul className="navbar-nav">
           <li className="nav-item active">
             <a className="nav-link" href="#">
-              Home
+              Featured
             </a>
           </li>
           <li className="nav-item" onClick={() => scrollTo(props.portfolioRef)}>

@@ -8,7 +8,6 @@ import fakedit from "./assets/images/fakedit.png";
 import mikoReader from "./assets/images/mikoReader.png";
 import vividImageOrganizer from "./assets/images/vividImageOrganizer.png";
 import mockTweeter from "./assets/images/mockTweeter.png";
-import tweetIguana from "./assets/images/tweetIguana.png";
 import snake from "./assets/images/snake.png";
 import battleship from "./assets/images/battleship.png";
 import skyFish from "./assets/images/skyFish.png";
@@ -83,14 +82,7 @@ function App() {
             description="A recreation of the classic game Battleship."
             color="blue"
           />
-          <CondensedProjectPreview
-            image={tweetIguana}
-            title="Tweet Iguana"
-            githubLink="https://github.com/SoniaVivi/tweet-iguana"
-            description="A Firefox browser extension that adds a download
-                         button to tweets."
-            color="teal"
-          />
+          <CondensedProjectPreview image={testImage} color="teal" />
           <CondensedProjectPreview image={testImage} color="green" />
         </ul>
         <div className="w-100 divider" ref={aboutRef}></div>
