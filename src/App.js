@@ -11,6 +11,7 @@ import mockTweeter from "./assets/images/mockTweeter.png";
 import snake from "./assets/images/snake.png";
 import battleship from "./assets/images/battleship.png";
 import skyFish from "./assets/images/skyFish.png";
+import rommTea from "./assets/images/rommTea.png";
 
 function App() {
   const portfolioRef = useRef(null);
@@ -25,15 +26,6 @@ function App() {
         <div className="w-100"></div>
         <FeaturedRow
           className="green"
-          previewImage={fakedit}
-          githubLink="https://github.com/SoniaVivi/odin-reddit"
-          title="Fakedit"
-          description="A Reddit clone web app, replicating the core features and
-                       appearance of Reddit."
-          livePreviewLink="https://odin-fakedit.herokuapp.com/"
-        />
-        <FeaturedRow
-          className="orange"
           previewImage={mikoReader}
           githubLink="https://github.com/SoniaVivi/miko-reader"
           title="Miko Reader"
@@ -42,15 +34,32 @@ function App() {
           livePreviewLink="https://miko-reader.herokuapp.com/"
         />
         <FeaturedRow
+          className="orange"
+          previewImage={fakedit}
+          githubLink="https://github.com/SoniaVivi/odin-reddit"
+          title="Fakedit"
+          description="A Reddit clone web app, replicating the core features and
+                       appearance of Reddit."
+          livePreviewLink="https://odin-fakedit.herokuapp.com/"
+        />
+        <FeaturedRow
           className="blue"
-          previewImage={vividImageOrganizer}
-          githubLink="https://github.com/SoniaVivi/Image-Organizer"
-          title="Vivid Image Organizer"
-          description="A desktop application to manage and search large
-                       quantities of images."
+          previewImage={rommTea}
+          githubLink="https://github.com/SoniaVivi/romm-tea"
+          title="Romm Tea"
+          description="A web app to list teas infusing time, rating, name, link, and more."
+          livePreviewLink="https://romm-tea.herokuapp.com/"
         />
         <div className="w-100 divider" ref={portfolioRef}></div>
         <ul className="col-12 row portfolio">
+          <CondensedProjectPreview
+            image={vividImageOrganizer}
+            githubLink="https://github.com/SoniaVivi/Image-Organizer"
+            title="Vivid Image Organizer"
+            description="A desktop application to manage and search large
+                       quantities of images."
+            color="green"
+          />
           <CondensedProjectPreview
             image={mockTweeter}
             title="Mock Tweeter"
@@ -65,7 +74,7 @@ function App() {
             githubLink="https://github.com/SoniaVivi/snake"
             description="A recreation of the classic arcade game Snake with
                          retro-style graphics."
-            color="green"
+            color="blue"
           />
           <CondensedProjectPreview
             image={skyFish}
@@ -80,9 +89,8 @@ function App() {
             title="Battleship"
             githubLink="https://github.com/SoniaVivi/battleship"
             description="A recreation of the classic game Battleship."
-            color="blue"
+            color="teal"
           />
-          <CondensedProjectPreview image={testImage} color="teal" />
           <CondensedProjectPreview image={testImage} color="green" />
         </ul>
         <div className="w-100 divider" ref={aboutRef}></div>
