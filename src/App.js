@@ -12,6 +12,7 @@ import snake from "./assets/images/snake.png";
 import battleship from "./assets/images/battleship.png";
 import skyFish from "./assets/images/skyFish.png";
 import rommTea from "./assets/images/rommTea.png";
+import yuriaMPGen from "./assets/images/yuriaMPGen.png";
 
 function App() {
   const portfolioRef = useRef(null);
@@ -61,12 +62,19 @@ function App() {
             color="green"
           />
           <CondensedProjectPreview
+            image={yuriaMPGen}
+            title="Yuria Movie Poster Generator"
+            githubLink="https://github.com/SoniaVivi/yuria-mp-gen"
+            description="A web app to quickly and easily create movie posters."
+            color="orange"
+          />
+          <CondensedProjectPreview
             image={mockTweeter}
             title="Mock Tweeter"
             githubLink="https://github.com/SoniaVivi/mock-tweeter"
             description="A web application to easily create and
                          download fake Tweets for use on other sites."
-            color="orange"
+            color="blue"
           />
           <CondensedProjectPreview
             image={snake}
@@ -74,7 +82,7 @@ function App() {
             githubLink="https://github.com/SoniaVivi/snake"
             description="A recreation of the classic arcade game Snake with
                          retro-style graphics."
-            color="blue"
+            color="violet"
           />
           <CondensedProjectPreview
             image={skyFish}
@@ -82,16 +90,15 @@ function App() {
             githubLink="https://github.com/SoniaVivi/sky-fish"
             description="A Firefox browser extension to retrieve manga data
                          from their respective title on Reddit."
-            color="violet"
+            color="teal"
           />
           <CondensedProjectPreview
             image={battleship}
             title="Battleship"
             githubLink="https://github.com/SoniaVivi/battleship"
             description="A recreation of the classic game Battleship."
-            color="teal"
+            color="green"
           />
-          <CondensedProjectPreview image={testImage} color="green" />
         </ul>
         <div className="w-100 divider" ref={aboutRef}></div>
         <h3>About</h3>
