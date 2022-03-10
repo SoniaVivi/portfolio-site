@@ -17,6 +17,16 @@ import yuriaMPGen from "./assets/images/yuriaMPGen.png";
 function App() {
   const portfolioRef = useRef(null);
   const aboutRef = useRef(null);
+  let currentRowIndex = 0;
+  const getRowColor = (reset = false) => {
+    if (reset) currentRowIndex = 0;
+    const rowColors = ["green", "orange", "blue", "violet", "teal"];
+    const current = rowColors[currentRowIndex];
+
+    currentRowIndex =
+      currentRowIndex != rowColors.length - 1 ? currentRowIndex + 1 : 0;
+    return current;
+  };
 
   return (
     <React.Fragment>
@@ -26,7 +36,7 @@ function App() {
         <div className="col-1 col-lg-2"></div>
         <div className="w-100"></div>
         <FeaturedRow
-          className="green"
+          className={getRowColor()}
           previewImage={mikoReader}
           githubLink="https://github.com/SoniaVivi/miko-reader"
           title="Miko Reader"
@@ -35,7 +45,7 @@ function App() {
           livePreviewLink="https://miko-reader.herokuapp.com/"
         />
         <FeaturedRow
-          className="orange"
+          className={getRowColor()}
           previewImage={fakedit}
           githubLink="https://github.com/SoniaVivi/odin-reddit"
           title="Fakedit"
@@ -44,7 +54,7 @@ function App() {
           livePreviewLink="https://odin-fakedit.herokuapp.com/"
         />
         <FeaturedRow
-          className="blue"
+          className={getRowColor()}
           previewImage={rommTea}
           githubLink="https://github.com/SoniaVivi/romm-tea"
           title="Romm Tea"
@@ -59,14 +69,14 @@ function App() {
             title="Vivid Image Organizer"
             description="A desktop application to manage and search large
                        quantities of images."
-            color="green"
+            color={getRowColor(true)}
           />
           <CondensedProjectPreview
             image={yuriaMPGen}
             title="Yuria Movie Poster Generator"
             githubLink="https://github.com/SoniaVivi/yuria-mp-gen"
             description="A web app to quickly and easily create movie posters."
-            color="orange"
+            color={getRowColor()}
           />
           <CondensedProjectPreview
             image={mockTweeter}
@@ -74,7 +84,7 @@ function App() {
             githubLink="https://github.com/SoniaVivi/mock-tweeter"
             description="A web application to easily create and
                          download fake Tweets for use on other sites."
-            color="blue"
+            color={getRowColor()}
           />
           <CondensedProjectPreview
             image={snake}
@@ -82,7 +92,7 @@ function App() {
             githubLink="https://github.com/SoniaVivi/snake"
             description="A recreation of the classic arcade game Snake with
                          retro-style graphics."
-            color="violet"
+            color={getRowColor()}
           />
           <CondensedProjectPreview
             image={skyFish}
@@ -90,14 +100,14 @@ function App() {
             githubLink="https://github.com/SoniaVivi/sky-fish"
             description="A Firefox browser extension to retrieve manga data
                          from their respective title on Reddit."
-            color="teal"
+            color={getRowColor()}
           />
           <CondensedProjectPreview
             image={battleship}
             title="Battleship"
             githubLink="https://github.com/SoniaVivi/battleship"
             description="A recreation of the classic game Battleship."
-            color="green"
+            color={getRowColor()}
           />
         </ul>
         <div className="w-100 divider" ref={aboutRef}></div>
