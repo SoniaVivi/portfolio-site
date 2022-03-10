@@ -1,31 +1,172 @@
 import React from "react";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 import useModal from "../hooks/useModal";
+
+const Container = styled.li`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 1 / 1;
+  width: calc(33.3333% - 10px);
+  margin: 0 5px 32px 5px;
+  padding: unset;
+
+  &:hover > * {
+    opacity: 1;
+  }
+
+  @media (max-width: 991px) {
+    & {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    & {
+      flex-flow: row nowrap;
+      height: 200px;
+      aspect-ratio: unset;
+    }
+  }
+
+  @media (max-width: 576px) {
+    & {
+      flex-flow: column nowrap;
+      width: fit-content;
+      height: fit-content;
+      padding-left: 0;
+
+      > * {
+        position: relative;
+        opacity: 1;
+      }
+    }
+  }
+`;
+
+const PreviewImage = styled.img`
+  flex-grow: 1;
+  max-height: 100%;
+  height: fit-content;
+  border: 1px solid ${(props) => props.theme.lightBorder};
+  border-radius: 5px;
+  object-position: top center;
+
+  @media (max-width: 991px) {
+    & {
+      height: 100%;
+      flex-grow: 1;
+      margin-right: 5px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    flex-grow: 0;
+    max-width: calc(100vw - 20px);
+    height: auto;
+    margin-right: 0;
+  }
+`;
+
+const Description = styled.div`
+  padding-right: ${(props) => props.theme.previewIconSize};
+
+  @media (max-width: 1199px) {
+    & {
+      h5 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+`;
+
+const Wrapper = styled.div`
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-flow: column nowrap;
+  max-height: 100%;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 125ms ease-in;
+  border-top: unset;
+  border: 1px solid ${(props) => props.theme.lightBorder};
+  border-radius: 5px;
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+
+  p {
+    margin-bottom: unset;
+  }
+
+  @media (min-width: 992px) {
+    & {
+      background-color: ${(props) => props.theme.background};
+    }
+  }
+
+  @media (max-width: 991px) {
+    & {
+      position: relative;
+      flex-basis: 75%;
+      height: 100%;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      opacity: 1;
+
+      .github-preview {
+        align-self: flex-start;
+      }
+
+      h5 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+`;
 
 const CondensedProjectPreview = (props) => {
   const [modal, toggleModal] = useModal(props.image);
 
   return (
-    <li className="project condensed col-12 col-lg-4">
-      <img
+    <Container className="col-12 col-lg-4">
+      <PreviewImage
         src={props.image}
-        className="condensed preview col-sm-4 col-lg-12"
+        className="col-sm-4 col-lg-12 clickable"
         onClick={toggleModal}
-      ></img>
-      <div className={`project wrapper condensed ${props.color}`}>
-        <div className="project description">
-          <h5 className="project">{props.title}</h5>
+      />
+      <Wrapper className={props.color}>
+        <Description>
+          <h5>{props.title}</h5>
           <p>
             {props.description ??
               `Lorem ipsum dolor sit amet, dicat indoctum mediocrem ad sed. Vis ne
             wisi congue possim. No purto ferri eos, pri in velit aperiam
             aliquam.`}
           </p>
-        </div>
-        <a className="github-preview" href={props.githubLink}></a>
-      </div>
+        </Description>
+        <a
+          className="github-preview"
+          onClick={() => window.open(props.githubLink)}
+        ></a>
+      </Wrapper>
       {modal}
-    </li>
+    </Container>
   );
 };
 

@@ -1,27 +1,61 @@
 import React from "react";
+import styled from "styled-components";
 import PropTypes from "prop-types";
+import ThemeToggle from "./styled/ThemeToggle";
+
+const Container = styled.nav`
+  margin-bottom: 50px;
+  border-bottom: 1px solid ${(props) => props.theme.lightBorder};
+  background-color: ${(props) => props.theme.background};
+`;
+
+const Wrapper = styled.div`
+  flex-direction: row-reverse;
+`;
+
+const NavList = styled.ul`
+  flex-direction: row;
+`;
+
+const NavItem = styled.li`
+  display: flex;
+  margin-left: 8px;
+`;
+
+const NavLink = styled.button`
+  color: ${(props) => props.theme.navTextColor};
+`;
 
 const Navbar = (props) => {
   const scrollTo = (ref) => ref.current.scrollIntoView(true);
 
   return (
-    <nav className="navbar sticky-top">
-      <div className="container-lg">
-        <ul className="navbar-nav">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
+    <Container className="navbar sticky-top">
+      <Wrapper className="container-lg">
+        <NavList className="navbar-nav">
+          <NavItem className="nav-item active">
+            <NavLink as="a" className="nav-link" href="#">
               Featured
-            </a>
-          </li>
-          <li className="nav-item" onClick={() => scrollTo(props.portfolioRef)}>
-            <button className="nav-link">Portfolio</button>
-          </li>
-          <li className="nav-item" onClick={() => scrollTo(props.aboutRef)}>
-            <button className="nav-link">About</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+            </NavLink>
+          </NavItem>
+          <NavItem
+            className="nav-item"
+            onClick={() => scrollTo(props.portfolioRef)}
+          >
+            <NavLink className="nav-link">Portfolio</NavLink>
+          </NavItem>
+          <NavItem
+            className="nav-item"
+            onClick={() => scrollTo(props.aboutRef)}
+          >
+            <NavLink className="nav-link">About</NavLink>
+          </NavItem>
+          <NavItem className="nav-item">
+            <ThemeToggle />
+          </NavItem>
+        </NavList>
+      </Wrapper>
+    </Container>
   );
 };
 
