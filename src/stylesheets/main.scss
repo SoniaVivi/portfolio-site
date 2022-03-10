@@ -34,15 +34,6 @@ img {
   overflow: hidden;
 }
 
-.divider {
-  $height: 2px;
-  min-height: $height;
-  max-height: $height;
-  margin-top: 25px;
-  margin-bottom: 50px;
-  background-color: $light-border;
-}
-
 .content {
   display: flex;
   flex-flow: column;
@@ -64,26 +55,6 @@ img {
   background-color: $color;
 }
 
-.green {
-  background-color: $green;
-}
-
-.orange {
-  background-color: $orange;
-}
-
-.blue {
-  background-color: $blue;
-}
-
-.violet {
-  background-color: $violet;
-}
-
-.teal {
-  background-color: $teal;
-}
-
 .github-preview {
   min-width: $preview-icon-size;
   min-height: $preview-icon-size;
@@ -91,23 +62,6 @@ img {
   height: $preview-icon-size;
   margin-top: auto;
   background: no-repeat center/100% url("../assets/github.svg");
-}
-
-.links-container {
-  flex-wrap: nowrap;
-  align-items: center;
-  max-width: 100%;
-  margin-left: 0;
-  padding-left: 1px;
-  overflow: hidden;
-
-  a {
-    text-transform: uppercase;
-    font-family: "Roboto Bold";
-    font-size: 12px;
-    font-weight: 600;
-    color: #36454f;
-  }
 }
 
 .overlay {
