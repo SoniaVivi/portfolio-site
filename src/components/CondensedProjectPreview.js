@@ -147,7 +147,7 @@ const CondensedProjectPreview = (props) => {
     <Container className="col-12 col-lg-4">
       <PreviewImage
         src={props.image}
-        className="col-sm-4 col-lg-12"
+        className="col-sm-4 col-lg-12 clickable"
         onClick={toggleModal}
       />
       <Wrapper className={props.color}>
@@ -160,7 +160,10 @@ const CondensedProjectPreview = (props) => {
             aliquam.`}
           </p>
         </Description>
-        <a className="github-preview" href={props.githubLink}></a>
+        <a
+          className="github-preview"
+          onClick={() => window.open(props.githubLink)}
+        ></a>
       </Wrapper>
       {modal}
     </Container>

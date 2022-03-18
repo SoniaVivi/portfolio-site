@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import CondensedProjectPreview from "./CondensedProjectPreview";
 import vividImageOrganizer from "../assets/images/vividImageOrganizer.png";
 import mockTweeter from "../assets/images/mockTweeter.png";
@@ -8,9 +9,13 @@ import skyFish from "../assets/images/skyFish.png";
 import yuriaMPGen from "../assets/images/yuriaMPGen.png";
 import getRowColor from "./helpers/getRowColor";
 
+const Container = styled.ul`
+  padding-left: 0;
+`;
+
 const CondensedProjectShowcase = () => {
   return (
-    <ul className="col-12 row">
+    <Container className="col-12 row">
       <CondensedProjectPreview
         image={vividImageOrganizer}
         githubLink="https://github.com/SoniaVivi/Image-Organizer"
@@ -57,7 +62,7 @@ const CondensedProjectShowcase = () => {
         description="A recreation of the classic game Battleship."
         color={getRowColor()}
       />
-    </ul>
+    </Container>
   );
 };
 
