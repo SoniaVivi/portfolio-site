@@ -61,7 +61,7 @@ img {
   width: $preview-icon-size;
   height: $preview-icon-size;
   margin-top: auto;
-  background: no-repeat center/100% url("../assets/github.svg");
+  background: no-repeat center/100% url("../assets/svgs/github.svg");
   cursor: pointer;
 }
 
@@ -105,6 +105,10 @@ img {
 
 .clickable {
   cursor: pointer;
+}
+
+.arrows > path {
+  color: #ffffff;
 }
 
 @media (max-width: 992px) {

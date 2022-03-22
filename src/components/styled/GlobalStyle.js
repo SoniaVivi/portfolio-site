@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+* {
+  color: ${(props) => props.theme.text}
+}
+
+body {
+  background-color: ${(props) => props.theme.background};
+}
+
 .green {
   background-color: ${(props) => props.theme.green};
 }

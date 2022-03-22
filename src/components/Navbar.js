@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import ThemeToggle from "./styled/ThemeToggle";
 
 const Container = styled.nav`
   margin-bottom: 50px;
@@ -17,6 +18,7 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled.li`
+  display: flex;
   margin-left: 8px;
 `;
 
@@ -47,6 +49,9 @@ const Navbar = (props) => {
             onClick={() => scrollTo(props.aboutRef)}
           >
             <NavLink className="nav-link">About</NavLink>
+          </NavItem>
+          <NavItem className="nav-item">
+            <ThemeToggle />
           </NavItem>
         </NavList>
       </Wrapper>
