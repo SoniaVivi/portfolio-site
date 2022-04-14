@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import testImage from "./assets/images/testImage.jpg";
-import FeaturedProjectShowcase from "./components/FeaturedProjectShowcase";
+import FeaturedProjectShowcase from "./components/featured/FeaturedProjectShowcase";
 import CondensedProjectShowcase from "./components/CondensedProjectShowCase";
 
 const dividerHeight = "2px";
@@ -16,7 +16,11 @@ const Divider = styled.div`
   background-color: ${(props) => props.theme.lightBorder};
 `;
 
-const FeaturedHeading = styled.h3`
+const StyledHeading = styled.h3`
+  color: ${(props) => props.theme.headingTextColor};
+`;
+
+const FeaturedHeading = styled(StyledHeading)`
   align-self: flex-start;
   text-align: center;
   margin-bottom: 32px;
@@ -39,7 +43,7 @@ function App() {
         <Divider className="w-100" ref={portfolioRef} />
         <CondensedProjectShowcase />
         <Divider className="w-100" ref={aboutRef} />
-        <h3>About</h3>
+        <StyledHeading>About</StyledHeading>
         <AboutSection portrait={testImage} />
       </div>
     </React.Fragment>

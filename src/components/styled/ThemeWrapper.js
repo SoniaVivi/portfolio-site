@@ -6,14 +6,6 @@ import GlobalStyle from "./GlobalStyle";
 const defaultStyles = {
   spacing: 32,
   previewIconSize: 20,
-};
-
-const lightTheme = {
-  background: "#ffffff",
-  border: "#ffffff",
-  lightBorder: "#edeff1",
-  text: "#000000",
-  themeToggleBackground: "#f5f5f5",
   green: "#e4ffe1",
   orange: "#f3caba",
   blue: "#bcd5f0",
@@ -22,18 +14,26 @@ const lightTheme = {
   gray: "#808080",
 };
 
+const lightTheme = {
+  background: "#ffffff",
+  border: "#ffffff",
+  lightBorder: "#edeff1",
+  text: "#000000",
+  themeToggleBackground: "#f5f5f5",
+  toggleIcon: "#000000",
+  navTextColor: "#000000",
+  headingTextColor: "#000000",
+};
+
 const darkTheme = {
-  background: "#0a090c",
+  background: "#151319",
   border: "rgba(85, 205, 252, 0.226)",
   lightBorder: "#000000",
-  gray: "#808080",
-  text: "#f2f2f2",
+  text: "#000000",
   themeToggleBackground: "#1e1e1e",
-  green: "#85aed6",
-  orange: "#9583b6",
-  blue: "#6770d6",
-  violet: "#94809f",
-  teal: "#649ff7",
+  toggleIcon: "#f2f2f2",
+  navTextColor: "#f2f2f2",
+  headingTextColor: "#f2f2f2",
 };
 
 const ThemeWrapper = (props) => {

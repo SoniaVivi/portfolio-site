@@ -23,7 +23,7 @@ const NavItem = styled.li`
 `;
 
 const NavLink = styled.button`
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.navTextColor};
 `;
 
 const Navbar = (props) => {

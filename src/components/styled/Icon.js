@@ -8,5 +8,5 @@ export const Icon = styled.img`
   margin-right: ${(props) => props.marginRight ?? 0};
   mask-image: url(${(props) => props.link});
   mask-repeat: no-repeat;
-  background-color: ${(props) => props.color ?? props.theme.text};
+  background-color: ${(props) => props.color ?? props.theme.toggleIcon};
 `;
