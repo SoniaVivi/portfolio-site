@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import ArrowsFullscreen from "../assets/ArrowsFullscreen";
-import useModal from "../hooks/useModal";
-import LinksContainer from "./styled/LinksContainer";
+import ArrowsFullscreen from "../../assets/ArrowsFullscreen";
+import useModal from "../../hooks/useModal";
+import LinksContainer from "../styled/LinksContainer";
+import ReactMarkdown from "react-markdown";
+import useDescription from "../../hooks/useDescription";
 
 const arrowSize = "25%";
 
@@ -91,6 +93,7 @@ const DescriptionContainer = styled.div`
 
 const FeaturedRow = (props) => {
   const [modal, toggleModal] = useModal(props.previewImage);
+  const description = useDescription(props.descriptionLink);
 
   return (
     <Container
@@ -108,7 +111,7 @@ const FeaturedRow = (props) => {
       </PreviewContainer>
       <DescriptionContainer className="col-12 col-lg-6">
         <h4>{props.title}</h4>
-        <p>{props.description}</p>
+        <ReactMarkdown>{description}</ReactMarkdown>
         <LinksContainer className="row ">
           <a
             className="github-preview"
@@ -138,7 +141,7 @@ FeaturedRow.propTypes = {
   previewImage: PropTypes.string.isRequired,
   githubLink: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  descriptionLink: PropTypes.string.isRequired,
   livePreviewLink: PropTypes.string,
   className: PropTypes.string,
 };

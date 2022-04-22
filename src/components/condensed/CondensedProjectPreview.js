@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import useModal from "../hooks/useModal";
+import useModal from "../../hooks/useModal";
+import useDescription from "../../hooks/useDescription";
+import ReactMarkdown from "react-markdown";
 
 const Container = styled.li`
   position: relative;
@@ -142,6 +144,7 @@ const Wrapper = styled.div`
 
 const CondensedProjectPreview = (props) => {
   const [modal, toggleModal] = useModal(props.image);
+  const description = useDescription(props.descriptionLink);
 
   return (
     <Container className="col-12 col-lg-4">
@@ -153,12 +156,7 @@ const CondensedProjectPreview = (props) => {
       <Wrapper className={props.color}>
         <Description>
           <h5>{props.title}</h5>
-          <p>
-            {props.description ??
-              `Lorem ipsum dolor sit amet, dicat indoctum mediocrem ad sed. Vis ne
-            wisi congue possim. No purto ferri eos, pri in velit aperiam
-            aliquam.`}
-          </p>
+          <ReactMarkdown>{description}</ReactMarkdown>
         </Description>
         <a
           className="github-preview"
@@ -177,5 +175,5 @@ CondensedProjectPreview.propTypes = {
   image: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   githubLink: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  descriptionLink: PropTypes.string,
 };
