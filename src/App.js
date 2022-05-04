@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import testImage from "./assets/images/testImage.jpg";
 import FeaturedProjectShowcase from "./components/featured/FeaturedProjectShowcase";
-import CondensedProjectShowcase from "./components/CondensedProjectShowCase";
+import CondensedProjectShowcase from "./components/condensed/CondensedProjectShowCase";
 
 const dividerHeight = "2px";
 

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import ArrowsFullscreen from "../../assets/ArrowsFullscreen";
 import useModal from "../../hooks/useModal";
 import LinksContainer from "../styled/LinksContainer";
 import ReactMarkdown from "react-markdown";
+import useDescription from "../../hooks/useDescription";
 
 const arrowSize = "25%";
 
@@ -92,15 +93,7 @@ const DescriptionContainer = styled.div`
 
 const FeaturedRow = (props) => {
   const [modal, toggleModal] = useModal(props.previewImage);
-  const [description, setDescription] = useState("");
-
-  useEffect(
-    () =>
-      fetch(props.descriptionLink)
-        .then((r) => r.text())
-        .then((text) => setDescription(text)),
-    []
-  );
+  const description = useDescription(props.descriptionLink);
 
   return (
     <Container
