@@ -1,4 +1,4 @@
-Created with: Ruby on Rails, React, styled-components
+Created with: Ruby on Rails, React, styled-components, Sencha
 
 A web app for keeping track of the most important aspects in hot leaf water infusing, better known as "brewing tea".
 
