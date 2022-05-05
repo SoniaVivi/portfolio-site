@@ -6,6 +6,7 @@ import useModal from "../../hooks/useModal";
 import LinksContainer from "../styled/LinksContainer";
 import ReactMarkdown from "react-markdown";
 import useDescription from "../../hooks/useDescription";
+import GithubLink from "../GithubLink";
 
 const arrowSize = "25%";
 
@@ -113,10 +114,7 @@ const FeaturedRow = (props) => {
         <h4>{props.title}</h4>
         <ReactMarkdown>{description}</ReactMarkdown>
         <LinksContainer className="row ">
-          <a
-            className="github-preview"
-            onClick={() => window.open(props.githubLink)}
-          ></a>
+          <GithubLink github={props.githubLink} />
           {props.livePreviewLink ? (
             <React.Fragment>
               <div className="dot"></div>

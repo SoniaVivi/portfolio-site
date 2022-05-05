@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import useModal from "../../hooks/useModal";
 import useDescription from "../../hooks/useDescription";
 import ReactMarkdown from "react-markdown";
+import GithubLink from "../GithubLink";
 
 const Container = styled.li`
   position: relative;
@@ -158,10 +159,7 @@ const CondensedProjectPreview = (props) => {
           <h5>{props.title}</h5>
           <ReactMarkdown>{description}</ReactMarkdown>
         </Description>
-        <a
-          className="github-preview"
-          onClick={() => window.open(props.githubLink)}
-        ></a>
+        <GithubLink github={props.githubLink} />
       </Wrapper>
       {modal}
     </Container>

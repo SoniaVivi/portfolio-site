@@ -59,16 +59,6 @@ p {
   background-color: $color;
 }
 
-.github-preview {
-  min-width: $preview-icon-size;
-  min-height: $preview-icon-size;
-  width: $preview-icon-size;
-  height: $preview-icon-size;
-  margin-top: auto;
-  background: no-repeat center/100% url("../assets/svgs/github.svg");
-  cursor: pointer;
-}
-
 .overlay {
   display: none;
   position: absolute;
