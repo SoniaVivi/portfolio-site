@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import LinksContainer from "./styled/LinksContainer";
+import GithubLink from "./GithubLink";
 
 const portraitPadding = "25px";
 
@@ -27,7 +28,7 @@ const AboutSection = (props) => {
         <Portrait src={props.portrait} />
       </PortraitWrapper>
       <DescriptionWrapper className="col-12 col-sm-9">
-        <h5>Lorem Ipsum</h5>
+        <h5>Siona S Vivian</h5>
         <p>
           Lorem ipsum dolor sit amet, cum commodo delectus instructior id, his
           ex utinam intellegam, fugit nostro periculis ei his. Eu sanctus
@@ -36,9 +37,13 @@ const AboutSection = (props) => {
           eam cu, nibh autem tibique eu quo
         </p>
         <LinksContainer className="row about">
-          <a className="github-preview"></a>
+          <GithubLink github="https://github.com/SoniaVivi" />
           <div className="dot"></div>
-          <a>Codewars</a>
+          <a
+            onClick={() => window.open("https://www.codewars.com/users/SVivn")}
+          >
+            Codewars
+          </a>
         </LinksContainer>
       </DescriptionWrapper>
     </div>

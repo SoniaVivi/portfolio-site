@@ -12,9 +12,10 @@ const LinksContainer = styled.div`
   a {
     text-transform: uppercase;
     font-family: "Roboto Bold";
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     color: #36454f;
+    text-decoration: none;
   }
 `;
 
