@@ -3,6 +3,9 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import LinksContainer from "./styled/LinksContainer";
 import GithubLink from "./GithubLink";
+import aboutLink from "./aboutDescription/about.md";
+import ReactMarkdown from "react-markdown";
+import useDescription from "../hooks/useDescription";
 
 const portraitPadding = "25px";
 
@@ -22,20 +25,17 @@ const DescriptionWrapper = styled.div`
 `;
 
 const AboutSection = (props) => {
+  const description = useDescription(aboutLink);
+
   return (
     <div className="col-12 row about blue">
       <PortraitWrapper className=" col-12 col-sm-3">
         <Portrait src={props.portrait} />
       </PortraitWrapper>
       <DescriptionWrapper className="col-12 col-sm-9">
-        <h5>Siona S Vivian</h5>
-        <p>
-          Lorem ipsum dolor sit amet, cum commodo delectus instructior id, his
-          ex utinam intellegam, fugit nostro periculis ei his. Eu sanctus
-          recteque necessitatibus duo, ut mundi gloriatur intellegat his. Ea pro
-          efficiendi philosophia, elit erat et has. Vero maluisset definitiones
-          eam cu, nibh autem tibique eu quo
-        </p>
+        <h5>Siona Vivian</h5>
+        <ReactMarkdown>{description}</ReactMarkdown>
+        <p></p>
         <LinksContainer className="row about">
           <GithubLink github="https://github.com/SoniaVivi" />
           <div className="dot"></div>
