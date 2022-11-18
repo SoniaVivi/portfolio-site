@@ -4,7 +4,7 @@ import CondensedProjectPreview from "./CondensedProjectPreview";
 import vividImageOrganizer from "../../assets/images/vividImageOrganizer.png";
 import mockTweeter from "../../assets/images/mockTweeter.png";
 import snake from "../../assets/images/snake.png";
-import battleship from "../../assets/images/battleship.png";
+import enJPTitleFinder from "../../assets/images/enJPTitleFinder.png";
 import skyFish from "../../assets/images/skyFish.png";
 import yuriaMPGen from "../../assets/images/yuriaMPGen.png";
 import getRowColor from "../helpers/getRowColor";
@@ -13,6 +13,8 @@ import yuriaLink from "./projectDescriptions/yuria.md";
 import mockTweeterLink from "./projectDescriptions/mockTweeter.md";
 import snakeLink from "./projectDescriptions/snake.md";
 import skyFishLink from "./projectDescriptions/skyFish.md";
+import enJpTitleConverterLink from "./projectDescriptions/enJpTitleConverter.md";
+import battleship from "../../assets/images/battleship.png";
 import battleshipLink from "./projectDescriptions/battleship.md";
 
 const Container = styled.ul`
@@ -34,6 +36,13 @@ const CondensedProjectShowcase = () => {
         title="Yuria Movie Poster Generator"
         githubLink="https://github.com/SoniaVivi/yuria-mp-gen"
         descriptionLink={yuriaLink}
+        color={getRowColor()}
+      />
+      <CondensedProjectPreview
+        image={enJPTitleFinder}
+        title="EN to JP title finder"
+        githubLink="https://github.com/SoniaVivi/en-jp-title-finder"
+        descriptionLink={enJpTitleConverterLink}
         color={getRowColor()}
       />
       <CondensedProjectPreview
