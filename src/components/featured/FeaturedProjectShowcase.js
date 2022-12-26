@@ -25,7 +25,6 @@ const FeaturedProjectShowcase = () => {
         githubLink="https://github.com/SoniaVivi/romm-tea"
         title="Romm Tea"
         descriptionLink={rommTeaLink}
-        livePreviewLink="https://romm-tea.herokuapp.com/"
       />
       <FeaturedRow
         className={getRowColor()}
@@ -33,7 +32,6 @@ const FeaturedProjectShowcase = () => {
         githubLink="https://github.com/SoniaVivi/odin-reddit"
         title="Fakedit"
         descriptionLink={fakeditLink}
-        livePreviewLink="https://odin-fakedit.herokuapp.com/"
       />
     </ul>
   );
