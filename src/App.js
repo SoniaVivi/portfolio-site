@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
-import testImage from "./assets/images/testImage.jpg";
 import FeaturedProjectShowcase from "./components/featured/FeaturedProjectShowcase";
 import CondensedProjectShowcase from "./components/condensed/CondensedProjectShowCase";
+import aboutImage from "./assets/images/aboutPic.png";
 
 const dividerHeight = "2px";
 
@@ -44,7 +44,7 @@ function App() {
         <CondensedProjectShowcase />
         <Divider className="w-100" ref={aboutRef} />
         <StyledHeading>About</StyledHeading>
-        <AboutSection portrait={testImage} />
+        <AboutSection portrait={aboutImage} />
       </div>
     </React.Fragment>
   );
